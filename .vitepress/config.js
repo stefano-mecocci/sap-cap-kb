@@ -23,7 +23,11 @@ export default defineConfig({
         items: [
           { text: 'Inserire una tabella', link: '/tutorials/inserire-tabella' },
           { text: 'Pulsanti', link: '/tutorials/pulsanti' },
-          { text: 'Importare elementi', link: '/tutorials/importare-elementi' }
+          { text: 'Importare elementi', link: '/tutorials/importare-elementi' },
+          {
+            text: 'Chiamare funzioni',
+            link: '/tutorials/call-functions'
+          }
         ]
       },
       {
@@ -34,10 +38,6 @@ export default defineConfig({
         text: 'Glossario',
         link: '/glossario'
       },
-      {
-        text: 'Funzioni',
-        link: '/tutorials/functions'
-      }
     ],
 
     socialLinks: [

@@ -24,7 +24,7 @@ La convenzione vuole che come alias si usi sempre il nome che segue dopo l'ultim
 libreria (es. `m` per `sap.m` o `layout` per `sap.ui.layout`).
 :::
 
-**Import senza alias**
+### Import senza alias
 
 Esiste la possibilità di importare gli elementi di una libreria senza alias. Tuttavia **questo si può fare per una sola
 libreria**. Per farlo bisogna scrivere solo `xmlns`, in questo modo non si deve prefissare gli elementi 
