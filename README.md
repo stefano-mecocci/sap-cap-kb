@@ -3,6 +3,14 @@
 Big problem: the SAP CAP docs are really bad.
 Solution? Write a personal version of the docs to use for my job
 
-## How to run
+## Setup
 
-`npm run docs:dev`
+`npm i`
+
+## Run
+
+`npm docs:dev`
+
+## Deploy
+
+Just commit and push!

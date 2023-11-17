@@ -24,10 +24,8 @@ export default defineConfig({
           { text: 'Inserire una tabella', link: '/tutorials/inserire-tabella' },
           { text: 'Pulsanti', link: '/tutorials/pulsanti' },
           { text: 'Importare elementi', link: '/tutorials/importare-elementi' },
-          {
-            text: 'Chiamare funzioni',
-            link: '/tutorials/call-functions'
-          }
+          { text: 'Chiamare funzioni', link: '/tutorials/call-functions' },
+          { text: "Test", link: "/tutorials/test" }
         ]
       },
       {
