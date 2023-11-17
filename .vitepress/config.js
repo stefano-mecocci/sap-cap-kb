@@ -3,7 +3,6 @@ import { join, resolve } from 'node:path'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: "/sap-cap-kb/",
   title: "SAP CAP Knowledge Base",
   description: "Un semplice sito che fornisce guide, tutorial, ecc. riguardo SAP CAP e UI5",
   srcDir: 'src',
