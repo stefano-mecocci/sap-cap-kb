@@ -1,55 +1,47 @@
-# Funzioni (CDS)
+# Usare un servizio
 
-Una funzione si dichiara in una service CDS in questo modo. 
-La definizione si scrive in un file `.cds`, mentre l'implementazione
-avviene in un file `.js` con lo stesso identico nome.
+Per usare un servizio OData esistono vari modi. Ognuno di questi fa riferimento
+al concetto di _binding_. In parole povere, si collega un endpoint del server ad
+un elemento XML oppure ad un oggetto JS.
 
-::: code-group
+## Dichiarazione modello OData nel manifest
 
-```cds [pippo-srv.cds]
-service PippoService {
-  function sum (x: Integer, y: Integer) returns Integer;
-}
-```
+...
 
-```js [pippo-srv.js]
-module.exports = srv => {
-  srv.on("foo", req => {
-    return 42;
-  });
-}
-```
+## Ottenere una risorsa
 
-:::
+Per ottenere una risorsa si fa riferimento ad essa tramite un _path_.
+In questo modo possiamo creare il binding.
 
-## Chiamare le funzioni tramite richiesta HTTP
+Ad esempio supponiamo di voler ottenere tutti i record relativi ad una entity chiamata _Users_
+e volerli stampare in una tabella. Abbiamo due possibilità:
 
-In un file `.http` scrivere:
+### 1) binding diretto alla tabella
 
-```
-GET .../odata/v4/pippo/sum(x=2,y=4)
-```
-
-Spiegazione:
-- `pippo` = prima parte del nome del service in kebab-case (es. DioCaneService -> dio-cane)
-- `sum`, nome funzione
-- `(x=2,y=4)`, eventuale lista di argomenti con nome e valore
-
-
-## Come chiamare funzioni da una view
-
-Se il mainService è quello indicato nella CDS basta chiamarle come un normale
-binding ad una entity.
-
+Su ogni elemento che supporta l'aggregation `items` è possibile
+effetuare il binding di una lista di oggetti. Ad esempio:
 
 ```xml
-<Text text="{path: '/foo()', type: 'sap.ui.model.odata.type.Int32'}" />
+<Table items="{odata>/Users}">
+...
+</Table>
 ```
 
-::: warning
-Se la funzione chiamata ritorna un valore con tipo primitivo, questo va specificato con
-la proprietà `type` (in questo caso era un intero quindi `Int32` va bene). Per una reference dei tipi che si possono
-usare leggere [SAP OData types](https://help.sap.com/docs/SAP_NETWEAVER_AS_ABAP_752/468a97775123488ab3345a0c48cadd8f/333a9dac5a614b1590c61916c9cecbf5.html).
-:::
+### 2) binding indiretto con JS
 
-inserire i puntini ... fra parentesi == deferred
+Supponendo che il nostro model abbia nome `odata`.
+
+```js
+let odataModel = this.getView().getModel("odata");
+let binding = odataModel.bindList("/Users");
+let contexts = await binding.requestContexts();
+let users = contexts.map(ctx => ctx.getObject());
+```
+
+Qui nella variabile `users` avremo la lista di utenti in forma di array di
+oggetti.
+
+::: danger Occhio al contesto
+Attenzione ad usare tutto ciò in un contesto `async`, dato che nella terza riga
+viene usato il costrutto `await`
+:::

@@ -1,19 +1,17 @@
 import { defineConfig } from 'vitepress'
-import { join, resolve } from 'node:path'
+import { join } from 'node:path'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "SAP CAP Knowledge Base",
-  description: "Un semplice sito che fornisce guide, tutorial, ecc. riguardo SAP CAP e UI5",
+  description: "Guide, tutorial e tanto altro riguardo SAP CAP",
   srcDir: 'src',
   themeConfig: {
     search: {
       provider: 'local'
     },
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Tutorials', link: '/tutorials/inserire-tabella' }
     ],
 
     sidebar: [
@@ -24,8 +22,8 @@ export default defineConfig({
           { text: 'Inserire una tabella', link: '/tutorials/inserire-tabella' },
           { text: 'Pulsanti', link: '/tutorials/pulsanti' },
           { text: 'Importare elementi', link: '/tutorials/importare-elementi' },
-          { text: 'Chiamare funzioni', link: '/tutorials/call-functions' },
-          { text: "Test", link: "/tutorials/test" }
+          { text: 'Usare un servizio', link: '/tutorials/call-functions' },
+          { text: "Update di una entity", link: "/tutorials/update-entity" }
         ]
       },
       {

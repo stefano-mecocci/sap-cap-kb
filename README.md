@@ -9,7 +9,7 @@ Solution? Write a personal version of the docs to use for my job
 
 ## Run
 
-`npm docs:dev`
+`npm run docs:dev`
 
 ## Deploy
 

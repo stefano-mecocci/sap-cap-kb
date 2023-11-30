@@ -1,18 +1,14 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
   name: "SAP CAP Knowledge Base"
-  text: "Guide, tutorial e molto altro riguardo al mondo CAP"
+  text: "Guide, tutorial e tanto altro riguardo SAP CAP"
   tagline: "Parola d'ordine: semplicità"
   actions:
     - theme: brand
-      text: Tutorials
+      text: Inizia qui
       link: /tutorials/inserire-tabella
-    - theme: alt
-      text: Esempi
-      link: /api-examples
 
 features:
   - title: Semplice
