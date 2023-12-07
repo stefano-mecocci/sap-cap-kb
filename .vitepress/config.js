@@ -23,7 +23,8 @@ export default defineConfig({
           { text: 'Pulsanti', link: '/tutorials/pulsanti' },
           { text: 'Importare elementi', link: '/tutorials/importare-elementi' },
           { text: 'Usare un servizio', link: '/tutorials/call-functions' },
-          { text: "Update di una entity", link: "/tutorials/update-entity" }
+          { text: "Update di una entity", link: "/tutorials/update-entity" },
+          { text: "Binding singolo", link: "/tutorials/binding-single-instance" }
         ]
       },
       {

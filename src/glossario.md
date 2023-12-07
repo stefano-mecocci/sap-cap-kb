@@ -25,3 +25,8 @@ Descrive tutta la configurazione dell'applicazione, fra cui:
 Rappresenta la struttura dei dati all'interno di un applicazione. Ne esistono di due categorie: quelli
 forniti di default (es. i18n) e quelli personalizzati definibili dallo sviluppatore.
 
+## Context binding
+
+Un collegamento ad una _singola_ istanza di una entity (una riga del db). Non rappresenta solo
+i dati dell'entità ma anche i suoi eventuali collegamenti con altre entity.
+
